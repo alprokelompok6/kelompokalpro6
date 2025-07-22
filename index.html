@@ -1,132 +1,31 @@
 <html lang="id">
-<!DOCTYPE html>
-<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Kelayakan Beasiswa Mahasiswa</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        .gradient-bg {
-            background-color: #2c6e49; /* Dark Green */
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .smooth-transition {
-            transition: all 0.3s ease;
-        }
-        #login-modal {
-            display: none;
-        }
-        #pendaftaran {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistem Kelayakan Beasiswa Mahasiswa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gray-50">
-     <header class="bg-[#2c6e49] text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                  <img src="img/Logo_Universitas_Muhammadiyah_Sorong.png" alt="Logo Universitas Muhammadiyah Sorong" class="w-16 h-16 object-contain">
-                    <h1 class="text-2xl font-bold">Universitas Muhammadiyah Sorong</h1>
-                </div>
-            </div>
-            <nav class="mt-4">
-                <ul class="flex space-x-6">
-                    <li><a href="#beranda" class="hover:text-blue-200 smooth-transition">Beranda</a></li>
-                    <li><a href="#pendaftaran" class="hover:text-blue-200 smooth-transition">Pendaftaran</a></li>
-                    <li><a href="#kriteria" class="hover:text-blue-200 smooth-transition">Kriteria</a></li>
-                </ul>
-            </nav>
-         <button id="login-btn" class="bg-white text-blue-800 px-4 py-2 rounded-lg font-medium hover:bg-blue-100 smooth-transition mt-4" aria-label="Daftar Sekarang">Daftar Sekarang</button>
-    </header>
 
-    <!-- Login Modal -->
-    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-white rounded-lg shadow-lg p-8 w-96">
-            <h2 class="text-xl font-bold mb-4 text-gray-800">Login Admin</h2>
-            <div class="mb-4">
-                <label for="username" class="block text-gray-700 mb-1">Username</label>
-                <input type="text" id="username" class="w-full px-4 py-2 border rounded-lg" placeholder="admin">
-            </div>
-            <div class="mb-6">
-                <label for="password" class="block text-gray-700 mb-1">Password</label>
-                <input type="password" id="password" class="w-full px-4 py-2 border rounded-lg" placeholder="••••••••">
-            </div>
-            <div class="flex justify-end">
-                <button id="login-submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Login</button>
-            </div>
+  <header class="bg-[#2c6e49] text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <img src="Logo_Universitas_Muhammadiyah_Sorong.png" alt="Logo Universitas Muhammadiyah Sorong" class="w-16 h-16 object-contain" />
+          <h1 class="text-2xl font-bold">Universitas Muhammadiyah Sorong</h1>
         </div>
+      </div>
+      <nav class="mt-4">
+        <ul class="flex space-x-6">
+          <li><a href="#beranda" class="hover:text-blue-200 smooth-transition">Beranda</a></li>
+          <li><a href="#Menu Uji Coba" class="hover:text-blue-200 smooth-transition">Menu Uji Coba</a></li>
+          <li><a href="#kriteria" class="hover:text-blue-200 smooth-transition">Kriteria</a></li>
+        </ul>
+      </nav>
     </div>
-          <script>
-           document.getElementById("login-btn").addEventListener("click", function () {
-            document.getElementById("login-modal").style.display = "flex";
-       });
-
-    document.getElementById("login-submit").addEventListener("click", function () {
-        const username = document.getElementById("username").value.trim();
-        const password = document.getElementById("password").value.trim();
-
-        if (username === "admin" && password === "admin123") {
-            document.getElementById("login-modal").style.display = "none";
-            document.getElementById("pendaftaran").style.display = "block";
-            document.getElementById("beranda").style.display = "none";
-            document.getElementById("admin-link").classList.remove("hidden");
-            document.getElementById("login-btn").style.display = "none";
-        } else {
-            alert("Username atau password salah!");
-        }
-    });
-
-    document.querySelector('a[href="#beranda"]').addEventListener("click", function (e) {
-        e.preventDefault();
-        document.getElementById("pendaftaran").style.display = "none";
-        document.getElementById("beranda").style.display = "block";
-    });
-</script>
-
-</body>
-</html>
-    </header>
-    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-white rounded-lg shadow-lg p-8 w-96">
-            <h2 class="text-xl font-bold mb-4 text-gray-800">Login Admin</h2>
-            <div class="mb-4">
-                <label for="username" class="block text-gray-700 mb-1">Username</label>
-                <input type="text" id="username" class="w-full px-4 py-2 border rounded-lg" placeholder="admin">
-            </div>
-            <div class="mb-6">
-                <label for="password" class="block text-gray-700 mb-1">Password</label>
-                <input type="password" id="password" class="w-full px-4 py-2 border rounded-lg" placeholder="••••••••">
-            </div>
-            <div class="flex justify-end">
-                <button id="login-submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Login</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById("login-btn").addEventListener("click", function () {
-            document.getElementById("login-modal").style.display = "flex";
-        });
-
-        document.getElementById("login-submit").addEventListener("click", function () {
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value.trim();
-
-            if (username === "admin" && password === "admin123") {
-                document.getElementById("login-modal").style.display = "none";
-                document.getElementById("pendaftaran").style.display = "block";
-                document.getElementById("admin-link").classList.remove("hidden");
-            } else {
-                alert("Username atau password salah!");
-            }
-        });
+  </header>
     </script>
     <main>
 
@@ -134,7 +33,7 @@
           <div class="container mx-auto px-4">
              <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                <h2 class="text-4xl font-bold mb-4">Sistem Pendaftaran Beasiswa Mahasiswa</h2>
+                <h2 class="text-4xl font-bold mb-4">Klasifikasi Kelayakan Mahasiswa Dalam Penerimaan Beasiswa</h2>
                 <p class="text-xl mb-8">Platform digital untuk memproses seleksi penerima beasiswa berdasarkan kriteria akademik dan non-akademik.</p>
              </div>
              <div class="md:w-1/2">
@@ -145,7 +44,7 @@
         </section>
         <section id="pendaftaran" class="py-16 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Formulir Pendaftaran Beasiswa</h2>
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Menu Uji Coba</h2>
                 
                 <div class="max-w-3xl mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
                     <form id="beasiswa-form">
